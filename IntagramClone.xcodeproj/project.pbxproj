@@ -3,19 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7312E36446F98390400083 /* Pods_IntagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */; };
+		D82353BA25A468570097861A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D82353B925A468570097861A /* GoogleService-Info.plist */; };
 		D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20925A3950C00FBE20C /* AppDelegate.swift */; };
 		D8CEC20C25A3950C00FBE20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */; };
 		D8CEC20E25A3950C00FBE20C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20D25A3950C00FBE20C /* ViewController.swift */; };
 		D8CEC21125A3950C00FBE20C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CEC20F25A3950C00FBE20C /* Main.storyboard */; };
 		D8CEC21325A3950F00FBE20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CEC21225A3950F00FBE20C /* Assets.xcassets */; };
 		D8CEC21625A3950F00FBE20C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CEC21425A3950F00FBE20C /* LaunchScreen.storyboard */; };
+		D8CEC22025A39C1000FBE20C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC21F25A39C1000FBE20C /* ColorExtension.swift */; };
+		D8DF0CFA25A9EBE000BFE236 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0CF925A9EBE000BFE236 /* MainTabBarController.swift */; };
+		D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0CFC25A9ECA100BFE236 /* UserProfileViewController.swift */; };
+		D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0D0025A9F24600BFE236 /* UserProfileHeader.swift */; };
+		D8E7B61325A9F690007F86CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E7B61225A9F690007F86CD /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA80056D0BC8660668CDFDA /* Pods-IntagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntagramClone.release.xcconfig"; path = "Target Support Files/Pods-IntagramClone/Pods-IntagramClone.release.xcconfig"; sourceTree = "<group>"; };
+		D82353B925A468570097861A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8CEC20625A3950C00FBE20C /* IntagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEC20925A3950C00FBE20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,12 @@
 		D8CEC21225A3950F00FBE20C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8CEC21525A3950F00FBE20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8CEC21725A3950F00FBE20C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8CEC21F25A39C1000FBE20C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		D8DF0CF925A9EBE000BFE236 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		D8DF0CFC25A9ECA100BFE236 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		D8DF0D0025A9F24600BFE236 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		D8E7B61225A9F690007F86CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FF2E137FC11229626628AB25 /* Pods-IntagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntagramClone.debug.xcconfig"; path = "Target Support Files/Pods-IntagramClone/Pods-IntagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7312E36446F98390400083 /* Pods_IntagramClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62571F3AF057C37BB178838E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF2E137FC11229626628AB25 /* Pods-IntagramClone.debug.xcconfig */,
+				8CA80056D0BC8660668CDFDA /* Pods-IntagramClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D404DDB22D48A4279636C603 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8CEC1FD25A3950C00FBE20C = {
 			isa = PBXGroup;
 			children = (
 				D8CEC20825A3950C00FBE20C /* IntagramClone */,
 				D8CEC20725A3950C00FBE20C /* Products */,
+				62571F3AF057C37BB178838E /* Pods */,
+				D404DDB22D48A4279636C603 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,45 @@
 		D8CEC20825A3950C00FBE20C /* IntagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				D8E7B61125A9F681007F86CD /* Model */,
+				D8DF0CFF25A9F22A00BFE236 /* UserProfile */,
+				D8CEC21E25A39BE900FBE20C /* Helpers */,
 				D8CEC20925A3950C00FBE20C /* AppDelegate.swift */,
 				D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */,
 				D8CEC20D25A3950C00FBE20C /* ViewController.swift */,
 				D8CEC20F25A3950C00FBE20C /* Main.storyboard */,
 				D8CEC21225A3950F00FBE20C /* Assets.xcassets */,
 				D8CEC21425A3950F00FBE20C /* LaunchScreen.storyboard */,
+				D82353B925A468570097861A /* GoogleService-Info.plist */,
 				D8CEC21725A3950F00FBE20C /* Info.plist */,
+				D8DF0CF925A9EBE000BFE236 /* MainTabBarController.swift */,
 			);
 			path = IntagramClone;
+			sourceTree = "<group>";
+		};
+		D8CEC21E25A39BE900FBE20C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D8CEC21F25A39C1000FBE20C /* ColorExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D8DF0CFF25A9F22A00BFE236 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				D8DF0CFC25A9ECA100BFE236 /* UserProfileViewController.swift */,
+				D8DF0D0025A9F24600BFE236 /* UserProfileHeader.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		D8E7B61125A9F681007F86CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8E7B61225A9F690007F86CD /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8CEC21A25A3950F00FBE20C /* Build configuration list for PBXNativeTarget "IntagramClone" */;
 			buildPhases = (
+				7FF78168315EDDC36A05A277 /* [CP] Check Pods Manifest.lock */,
 				D8CEC20225A3950C00FBE20C /* Sources */,
 				D8CEC20325A3950C00FBE20C /* Frameworks */,
 				D8CEC20425A3950C00FBE20C /* Resources */,
+				929ABC6499E85A301ECB4E76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CEC21625A3950F00FBE20C /* LaunchScreen.storyboard in Resources */,
+				D82353BA25A468570097861A /* GoogleService-Info.plist in Resources */,
 				D8CEC21325A3950F00FBE20C /* Assets.xcassets in Resources */,
 				D8CEC21125A3950C00FBE20C /* Main.storyboard in Resources */,
 			);
@@ -132,14 +201,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7FF78168315EDDC36A05A277 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntagramClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		929ABC6499E85A301ECB4E76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntagramClone/Pods-IntagramClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntagramClone/Pods-IntagramClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntagramClone/Pods-IntagramClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8CEC20225A3950C00FBE20C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D8CEC20E25A3950C00FBE20C /* ViewController.swift in Sources */,
+				D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */,
+				D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */,
 				D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */,
+				D8E7B61325A9F690007F86CD /* User.swift in Sources */,
+				D8DF0CFA25A9EBE000BFE236 /* MainTabBarController.swift in Sources */,
 				D8CEC20C25A3950C00FBE20C /* SceneDelegate.swift in Sources */,
+				D8CEC22025A39C1000FBE20C /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +399,7 @@
 		};
 		D8CEC21B25A3950F00FBE20C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2E137FC11229626628AB25 /* Pods-IntagramClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +419,7 @@
 		};
 		D8CEC21C25A3950F00FBE20C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CA80056D0BC8660668CDFDA /* Pods-IntagramClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
