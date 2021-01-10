@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		0C7312E36446F98390400083 /* Pods_IntagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */; };
 		D82353BA25A468570097861A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D82353B925A468570097861A /* GoogleService-Info.plist */; };
+		D876865725AB1E5300E8ADC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876865625AB1E5300E8ADC1 /* LoginViewController.swift */; };
 		D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20925A3950C00FBE20C /* AppDelegate.swift */; };
 		D8CEC20C25A3950C00FBE20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */; };
-		D8CEC20E25A3950C00FBE20C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20D25A3950C00FBE20C /* ViewController.swift */; };
+		D8CEC20E25A3950C00FBE20C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20D25A3950C00FBE20C /* RegisterViewController.swift */; };
 		D8CEC21125A3950C00FBE20C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CEC20F25A3950C00FBE20C /* Main.storyboard */; };
 		D8CEC21325A3950F00FBE20C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CEC21225A3950F00FBE20C /* Assets.xcassets */; };
 		D8CEC21625A3950F00FBE20C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CEC21425A3950F00FBE20C /* LaunchScreen.storyboard */; };
@@ -26,10 +27,11 @@
 		76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA80056D0BC8660668CDFDA /* Pods-IntagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntagramClone.release.xcconfig"; path = "Target Support Files/Pods-IntagramClone/Pods-IntagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		D82353B925A468570097861A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D876865625AB1E5300E8ADC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8CEC20625A3950C00FBE20C /* IntagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEC20925A3950C00FBE20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D8CEC20D25A3950C00FBE20C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8CEC20D25A3950C00FBE20C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D8CEC21025A3950C00FBE20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8CEC21225A3950F00FBE20C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8CEC21525A3950F00FBE20C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,13 +99,14 @@
 				D8CEC21E25A39BE900FBE20C /* Helpers */,
 				D8CEC20925A3950C00FBE20C /* AppDelegate.swift */,
 				D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */,
-				D8CEC20D25A3950C00FBE20C /* ViewController.swift */,
+				D8CEC20D25A3950C00FBE20C /* RegisterViewController.swift */,
 				D8CEC20F25A3950C00FBE20C /* Main.storyboard */,
 				D8CEC21225A3950F00FBE20C /* Assets.xcassets */,
 				D8CEC21425A3950F00FBE20C /* LaunchScreen.storyboard */,
 				D82353B925A468570097861A /* GoogleService-Info.plist */,
 				D8CEC21725A3950F00FBE20C /* Info.plist */,
 				D8DF0CF925A9EBE000BFE236 /* MainTabBarController.swift */,
+				D876865625AB1E5300E8ADC1 /* LoginViewController.swift */,
 			);
 			path = IntagramClone;
 			sourceTree = "<group>";
@@ -248,7 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8CEC20E25A3950C00FBE20C /* ViewController.swift in Sources */,
+				D876865725AB1E5300E8ADC1 /* LoginViewController.swift in Sources */,
+				D8CEC20E25A3950C00FBE20C /* RegisterViewController.swift in Sources */,
 				D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */,
 				D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */,
 				D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */,

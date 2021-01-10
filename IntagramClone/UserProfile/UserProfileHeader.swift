@@ -144,7 +144,7 @@ class UserProfileHeader : UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
+        backgroundColor = .systemBackground
         createToolBar()
         userProfileStatus()
         

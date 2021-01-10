@@ -10,7 +10,7 @@ import Firebase
 import JGProgressHUD
 
 
-class ViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     
     
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         txt.backgroundColor = UIColor(white: 0, alpha: 0.05)
         txt.placeholder = "Email Address"
         txt.borderStyle = .roundedRect
+        txt.textColor = .label
         txt.autocorrectionType = .no
         txt.font = UIFont.systemFont(ofSize: 16)
         txt.autocapitalizationType = .none
@@ -95,11 +96,33 @@ class ViewController: UIViewController {
         
         return btn
     }()
+    
+    
+    
+    let loginButton: UIButton  = {
+        let button = UIButton()
+
+        let attrText = NSMutableAttributedString(string: "Do you already have an account?", attributes: [.font : UIFont.systemFont(ofSize: 16), .foregroundColor : UIColor.label])
+        attrText.append(NSAttributedString(string: " Log In", attributes:  [.font : UIFont.boldSystemFont(ofSize: 16), .foregroundColor : UIColor.toRGB(red: 20, green: 155, blue: 235)]))
+        button.setAttributedTitle(attrText,for: .normal)
+        
+        
+        button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action:#selector(loginButtonPressed) , for: .touchUpInside)
+        return button
+    }()
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
       
         view.addSubview(btnAddPhoto)
+        view.addSubview(loginButton)
         
         
         
@@ -108,6 +131,8 @@ class ViewController: UIViewController {
 
         createEntryFields()
     
+        
+        loginButton.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 0, height: 50)
         
        
     }
@@ -146,6 +171,11 @@ class ViewController: UIViewController {
         }
         
         
+    }
+    
+    
+    @objc fileprivate func loginButtonPressed(){
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -202,6 +232,17 @@ class ViewController: UIViewController {
                         print("New UserData added successfully")
                         hud.dismiss(animated: true)
                         self.clearView()
+                        let keyWindow = UIApplication.shared.connectedScenes
+                            .filter({$0.activationState == .foregroundActive})
+                            .map({$0 as? UIWindowScene})
+                            .compactMap({$0})
+                            .first?.windows
+                            .filter({$0.isKeyWindow}).first
+                        
+                        guard let mainTabBarController = keyWindow?.rootViewController as? MainTabBarController else {return}
+                        mainTabBarController.presentVC()
+                        self.dismiss(animated: true, completion: nil) // dismiss login vc
+                        
                         print("New User created successfully: \(result?.user.uid ?? "")")
                     }
                 }
@@ -267,7 +308,7 @@ extension UIView {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // didCancel
     

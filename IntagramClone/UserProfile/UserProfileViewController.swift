@@ -19,11 +19,51 @@ class UserProfileViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .systemBackground
         getUser()
         collectionView.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: UserProfileHeader.identifier)
         
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: postCellID)
+        
+        collectionView.backgroundColor  = .systemBackground
+        createLogOutButton()
+        
+    }
+    
+    
+    fileprivate func createLogOutButton(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Ayarlar").withTintColor(UIColor.label, renderingMode: .alwaysOriginal), style: .plain, target: self, action: #selector(logOut))
+    }
+    
+    
+    @objc fileprivate func logOut(){
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Log Out", style: .destructive) { (_) in
+            
+            guard let _ = Auth.auth().currentUser?.uid else {return}
+            do{
+                try Auth.auth().signOut()
+                let vc = LoginViewController()
+                let nav = UINavigationController(rootViewController: vc)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+                
+            }catch let error {
+                print("Failed to log out \(error.localizedDescription)")
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(action)
+        alertController.addAction(cancelAction)
+        
+        
+        present(alertController, animated: true, completion: nil)
+        
+        
+        
         
     }
     
