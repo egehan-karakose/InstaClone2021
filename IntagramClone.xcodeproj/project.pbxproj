@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0C7312E36446F98390400083 /* Pods_IntagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */; };
 		D82353BA25A468570097861A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D82353B925A468570097861A /* GoogleService-Info.plist */; };
+		D862526625B049F000C7F4B1 /* PhotoPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862526525B049F000C7F4B1 /* PhotoPickerCell.swift */; };
+		D862526925B04EC300C7F4B1 /* ImagePickerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862526825B04EC300C7F4B1 /* ImagePickerHeader.swift */; };
+		D862526C25B0562900C7F4B1 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862526B25B0562900C7F4B1 /* SharePhotoController.swift */; };
 		D876865725AB1E5300E8ADC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876865625AB1E5300E8ADC1 /* LoginViewController.swift */; };
 		D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20925A3950C00FBE20C /* AppDelegate.swift */; };
 		D8CEC20C25A3950C00FBE20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */; };
@@ -20,6 +23,7 @@
 		D8DF0CFA25A9EBE000BFE236 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0CF925A9EBE000BFE236 /* MainTabBarController.swift */; };
 		D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0CFC25A9ECA100BFE236 /* UserProfileViewController.swift */; };
 		D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF0D0025A9F24600BFE236 /* UserProfileHeader.swift */; };
+		D8E59F4025AC55CE00815FF1 /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E59F3F25AC55CE00815FF1 /* PhotoPickerController.swift */; };
 		D8E7B61325A9F690007F86CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E7B61225A9F690007F86CD /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,9 @@
 		76384EC731065A198B14B0C2 /* Pods_IntagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA80056D0BC8660668CDFDA /* Pods-IntagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntagramClone.release.xcconfig"; path = "Target Support Files/Pods-IntagramClone/Pods-IntagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		D82353B925A468570097861A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D862526525B049F000C7F4B1 /* PhotoPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerCell.swift; sourceTree = "<group>"; };
+		D862526825B04EC300C7F4B1 /* ImagePickerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHeader.swift; sourceTree = "<group>"; };
+		D862526B25B0562900C7F4B1 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 		D876865625AB1E5300E8ADC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8CEC20625A3950C00FBE20C /* IntagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEC20925A3950C00FBE20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		D8DF0CF925A9EBE000BFE236 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D8DF0CFC25A9ECA100BFE236 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		D8DF0D0025A9F24600BFE236 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		D8E59F3F25AC55CE00815FF1 /* PhotoPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
 		D8E7B61225A9F690007F86CD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FF2E137FC11229626628AB25 /* Pods-IntagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntagramClone.debug.xcconfig"; path = "Target Support Files/Pods-IntagramClone/Pods-IntagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +102,7 @@
 		D8CEC20825A3950C00FBE20C /* IntagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				D8E59F3E25AC551300815FF1 /* Add Photo */,
 				D8E7B61125A9F681007F86CD /* Model */,
 				D8DF0CFF25A9F22A00BFE236 /* UserProfile */,
 				D8CEC21E25A39BE900FBE20C /* Helpers */,
@@ -126,6 +135,17 @@
 				D8DF0D0025A9F24600BFE236 /* UserProfileHeader.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		D8E59F3E25AC551300815FF1 /* Add Photo */ = {
+			isa = PBXGroup;
+			children = (
+				D8E59F3F25AC55CE00815FF1 /* PhotoPickerController.swift */,
+				D862526525B049F000C7F4B1 /* PhotoPickerCell.swift */,
+				D862526825B04EC300C7F4B1 /* ImagePickerHeader.swift */,
+				D862526B25B0562900C7F4B1 /* SharePhotoController.swift */,
+			);
+			path = "Add Photo";
 			sourceTree = "<group>";
 		};
 		D8E7B61125A9F681007F86CD /* Model */ = {
@@ -255,7 +275,11 @@
 				D8CEC20E25A3950C00FBE20C /* RegisterViewController.swift in Sources */,
 				D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */,
 				D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */,
+				D862526925B04EC300C7F4B1 /* ImagePickerHeader.swift in Sources */,
+				D862526625B049F000C7F4B1 /* PhotoPickerCell.swift in Sources */,
+				D8E59F4025AC55CE00815FF1 /* PhotoPickerController.swift in Sources */,
 				D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */,
+				D862526C25B0562900C7F4B1 /* SharePhotoController.swift in Sources */,
 				D8E7B61325A9F690007F86CD /* User.swift in Sources */,
 				D8DF0CFA25A9EBE000BFE236 /* MainTabBarController.swift in Sources */,
 				D8CEC20C25A3950C00FBE20C /* SceneDelegate.swift in Sources */,
