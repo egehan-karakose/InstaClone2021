@@ -7,30 +7,58 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 
 class UserProfileViewController: UICollectionViewController {
     
     
-    let postCellID = "postCellID"
+    
+    
+    var posts = [Post]()
     
     var currentUser : User?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         getUser()
         collectionView.register(UserProfileHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: UserProfileHeader.identifier)
         
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: postCellID)
+        collectionView.register(UserPostPhotoCell.self, forCellWithReuseIdentifier: UserPostPhotoCell.identifier)
         
         collectionView.backgroundColor  = .systemBackground
         createLogOutButton()
         
     }
     
+    
+    fileprivate func getPostsFS(){
+        
+        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        guard let currentUser = currentUser else {return}
+        Firestore.firestore().collection("Comments").document(currentUserId).collection("Posts").order(by: "CommentDate", descending: false)
+            .addSnapshotListener { (snapshot, error) in
+                if let error = error {
+                    print("Failed to get Posts : \(error.localizedDescription)")
+                }
+                
+                snapshot?.documentChanges.forEach({ (docChange) in
+                    if docChange.type == .added {
+                        let postData = docChange.document.data()  // post data
+                        let post = Post(user: currentUser, data: postData)
+                        self.posts.append(post)
+                    }
+                })
+                
+                //all posts added to posts array
+                self.posts.reverse()
+                self.collectionView.reloadData()
+            }
+        
+    }
     
     fileprivate func createLogOutButton(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Ayarlar").withTintColor(UIColor.label, renderingMode: .alwaysOriginal), style: .plain, target: self, action: #selector(logOut))
@@ -75,7 +103,7 @@ class UserProfileViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     
@@ -86,9 +114,9 @@ class UserProfileViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let postCell = collectionView.dequeueReusableCell(withReuseIdentifier: postCellID, for: indexPath)
+        let postCell = collectionView.dequeueReusableCell(withReuseIdentifier: UserPostPhotoCell.identifier, for: indexPath) as! UserPostPhotoCell
         
-        postCell.backgroundColor = .link
+        postCell.post = posts[indexPath.row]
         
         return postCell
     }
@@ -119,17 +147,16 @@ class UserProfileViewController: UICollectionViewController {
             }
             
             self.currentUser = User(userData: data)
-            self.collectionView.reloadData()
-            
+            self.getPostsFS()
             self.navigationItem.title = self.currentUser?.userName
             
-          
+            
         }
     }
     
-
-  
-
+    
+    
+    
 }
 
 extension UserProfileViewController: UICollectionViewDelegateFlowLayout {
@@ -138,5 +165,5 @@ extension UserProfileViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
-   
+    
 }

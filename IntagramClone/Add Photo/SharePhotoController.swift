@@ -143,7 +143,8 @@ class SharePhotoController : UIViewController {
         
         var ref : DocumentReference? = nil
         
-        ref = Firestore.firestore().collection("Comments").addDocument(data: data, completion: { (error) in
+        ref = Firestore.firestore().collection("Comments").document(currentUserID).collection("Posts")
+            .addDocument(data: data, completion: { (error) in
             if let error = error {
                 print("Fail to save comment \(error.localizedDescription)")
                 self.navigationItem.rightBarButtonItem?.isEnabled = true

@@ -39,7 +39,7 @@ class MainTabBarController : UITabBarController {
     func presentVC(){
         
         
-        let mainNavController = createNavController(image: #imageLiteral(resourceName: "Ana_Ekran_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ana_Ekran_Secili"), rootViewController: UserProfileViewController(collectionViewLayout: UICollectionViewLayout()))
+        let mainNavController = createNavController(image: #imageLiteral(resourceName: "Ana_Ekran_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ana_Ekran_Secili"), rootViewController: MainPageViewController(collectionViewLayout: UICollectionViewFlowLayout()))
 
         let searchNavController = createNavController(image:#imageLiteral(resourceName: "Ara_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ara_Secili"))
         
