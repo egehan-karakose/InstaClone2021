@@ -41,7 +41,7 @@ class MainTabBarController : UITabBarController {
         
         let mainNavController = createNavController(image: #imageLiteral(resourceName: "Ana_Ekran_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ana_Ekran_Secili"), rootViewController: MainPageViewController(collectionViewLayout: UICollectionViewFlowLayout()))
 
-        let searchNavController = createNavController(image:#imageLiteral(resourceName: "Ara_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ara_Secili"))
+        let searchNavController = createNavController(image:#imageLiteral(resourceName: "Ara_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ara_Secili"), rootViewController: SearchUserController(collectionViewLayout: UICollectionViewFlowLayout()))
         
         let addNavController = createNavController(image: #imageLiteral(resourceName: "Ekle_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Ekle_Secili_Degil"))
         let likeNavController = createNavController(image: #imageLiteral(resourceName: "Begeni_Secili_Degil"), selectedImage: #imageLiteral(resourceName: "Begeni_Secili"))

@@ -16,6 +16,7 @@ class UserProfileHeader : UICollectionViewCell {
     
     var currentUser : User? {
         didSet{
+            setFollowButton()
             guard let url = URL(string: currentUser?.pofilePhotoURL ?? "") else {return}
             imageProfile.sd_setImage(with: url, completed: nil)
             userNameLabel.text = currentUser?.userName
@@ -23,19 +24,133 @@ class UserProfileHeader : UICollectionViewCell {
     }
     
     
-    let editProfileButton: UIButton = {
+    fileprivate func setFollowButton(){
+        guard let authUserId = Auth.auth().currentUser?.uid else { return }
+        guard let currentUser = currentUser?.userId else { return }
+        
+        
+        if currentUser != authUserId {
+            
+            
+            Firestore.firestore().collection("Following").document(authUserId).getDocument { (snapshot, error) in
+                if let error = error {
+                    print( "Failed to get following data  : \(error.localizedDescription)" )
+                    return
+                }
+                guard let followingData = snapshot?.data() else { return }
+                if let data = followingData[currentUser] {
+                    let follow = data as! Int
+                    print(follow)
+                    if follow == 1 {
+                        self.editProfileButton.setTitle("Unfollow", for: .normal)
+                    }
+                    
+                } else {
+                    
+                    self.editProfileButton.setTitle("Follow", for: .normal)
+                    self.editProfileButton.backgroundColor = UIColor.toRGB(red: 20, green: 155, blue: 240)
+                    self.editProfileButton.setTitleColor(.white, for: .normal)
+                    self.editProfileButton.layer.borderColor =  UIColor(white: 0, alpha: 0.3).cgColor
+                    self.editProfileButton.layer.borderWidth = 1
+                    
+                }
+            }
+            
+            
+            
+            
+        } else {
+            self.editProfileButton.setTitle("Edit Profile", for: .normal)
+        }
+    }
+    
+    lazy var editProfileButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Edit Profile", for: .normal)
         button.layer.borderWidth = 1
         button.setTitleColor(.label, for: .normal)
         button.layer.borderColor = UIColor.label.cgColor
         button.titleLabel?.font  = UIFont.boldSystemFont(ofSize: 15)
         button.layer.cornerRadius = 5
-        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(editProfile_Follow_Button), for: .touchUpInside)
         
         return button
     }()
     
+    
+    @objc fileprivate func editProfile_Follow_Button(){
+        guard let authUserId = Auth.auth().currentUser?.uid else { return }
+        guard let currentUser = currentUser?.userId else { return }
+        
+        if currentUser != authUserId {
+        
+        if editProfileButton.titleLabel?.text == "Unfollow" {
+            Firestore.firestore().collection("Following").document(authUserId).updateData([currentUser : FieldValue.delete()]){ (error) in
+                if let error = error {
+                    print( "Failed to unfollow   : \(error.localizedDescription)" )
+                    return
+                }
+                
+                print("\(self.currentUser?.userName ?? "") unfollowed")
+                self.editProfileButton.backgroundColor = UIColor.toRGB(red: 20, green: 155, blue: 240)
+                self.editProfileButton.setTitleColor(.white, for: .normal)
+                self.editProfileButton.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
+                self.editProfileButton.layer.borderWidth = 1
+                self.editProfileButton.setTitle("Follow", for: .normal)
+    
+            }
+            return
+        }
+        
+        let followedId = [currentUser : 1]
+        
+        
+        
+        Firestore.firestore().collection("Following").document(authUserId).getDocument { (snapshot, error) in
+            if let error = error {
+                print( "Failed to get following data  : \(error.localizedDescription)" )
+                return
+            }
+            
+            if snapshot?.exists == true {
+                Firestore.firestore().collection("Following").document(authUserId).updateData(followedId) { (error) in
+                    
+                    if let error = error {
+                        print( "Failed to follow update : \(error.localizedDescription)" )
+                        return
+                    }
+                    print("User added followings")
+                    self.editProfileButton.setTitle("Unfollow", for: .normal)
+                    self.editProfileButton.layer.borderWidth = 1
+                    self.editProfileButton.backgroundColor = .systemBackground
+                    self.editProfileButton.setTitleColor(.label, for: .normal)
+                    self.editProfileButton.layer.borderColor = UIColor.label.cgColor
+                    self.editProfileButton.layer.cornerRadius = 5
+                    self.editProfileButton.setTitleColor(.label, for: .normal)
+                    self.editProfileButton.layer.borderColor = UIColor.label.cgColor
+      
+                }
+            } else {
+                Firestore.firestore().collection("Following").document(authUserId).setData(followedId){ (error) in
+                    if let error = error {
+                        print( "Failed to add following data : \(error.localizedDescription)" )
+                        return
+                    }
+                    
+                    print("User added followings")
+                    self.editProfileButton.setTitle("Unfollow", for: .normal)
+                    self.editProfileButton.layer.borderWidth = 1
+                    self.editProfileButton.setTitleColor(.label, for: .normal)
+                    self.editProfileButton.layer.borderColor = UIColor.label.cgColor
+                    self.editProfileButton.layer.cornerRadius = 5
+                    self.editProfileButton.setTitleColor(.label, for: .normal)
+                    self.editProfileButton.layer.borderColor = UIColor.label.cgColor
+                    
+                }
+            }
+        }
+        }
+        
+    }
     
     
     let postLabel : UILabel = {

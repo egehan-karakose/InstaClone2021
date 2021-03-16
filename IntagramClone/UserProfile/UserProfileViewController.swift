@@ -14,6 +14,8 @@ class UserProfileViewController: UICollectionViewController {
     
     
     
+    var userID : String?
+    
     
     var posts = [Post]()
     
@@ -37,8 +39,12 @@ class UserProfileViewController: UICollectionViewController {
     
     fileprivate func getPostsFS(){
         
-        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+//        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        
+        
+        guard let currentUserId = self.currentUser?.userId else {return}
         guard let currentUser = currentUser else {return}
+                
         Firestore.firestore().collection("Comments").document(currentUserId).collection("Posts").order(by: "CommentDate", descending: false)
             .addSnapshotListener { (snapshot, error) in
                 if let error = error {
@@ -135,7 +141,11 @@ class UserProfileViewController: UICollectionViewController {
     
     
     fileprivate func getUser(){
-        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        
+//        guard let userId = Auth.auth().currentUser?.uid else { return }
+        
+        let userId = userID ?? Auth.auth().currentUser?.uid ?? ""
         
         Firestore.firestore().collection("Users").document(userId).getDocument { (snapshot, error) in
             if let error = error {

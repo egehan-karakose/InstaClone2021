@@ -17,6 +17,8 @@
 		D86B164925B5A6C8003A95C6 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B164825B5A6C8003A95C6 /* MainPageViewController.swift */; };
 		D86B164D25B5A884003A95C6 /* MainPagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B164C25B5A884003A95C6 /* MainPagePostCell.swift */; };
 		D876865725AB1E5300E8ADC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876865625AB1E5300E8ADC1 /* LoginViewController.swift */; };
+		D89D602125BADC16007E32A2 /* SearchUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D602025BADC16007E32A2 /* SearchUserController.swift */; };
+		D89D602525BADF4A007E32A2 /* SearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D602425BADF4A007E32A2 /* SearchUserCell.swift */; };
 		D8CEC20A25A3950C00FBE20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20925A3950C00FBE20C /* AppDelegate.swift */; };
 		D8CEC20C25A3950C00FBE20C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */; };
 		D8CEC20E25A3950C00FBE20C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CEC20D25A3950C00FBE20C /* RegisterViewController.swift */; };
@@ -43,6 +45,8 @@
 		D86B164825B5A6C8003A95C6 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		D86B164C25B5A884003A95C6 /* MainPagePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePostCell.swift; sourceTree = "<group>"; };
 		D876865625AB1E5300E8ADC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D89D602025BADC16007E32A2 /* SearchUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserController.swift; sourceTree = "<group>"; };
+		D89D602425BADF4A007E32A2 /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
 		D8CEC20625A3950C00FBE20C /* IntagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CEC20925A3950C00FBE20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CEC20B25A3950C00FBE20C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		D89D601F25BADBF6007E32A2 /* Search User */ = {
+			isa = PBXGroup;
+			children = (
+				D89D602025BADC16007E32A2 /* SearchUserController.swift */,
+				D89D602425BADF4A007E32A2 /* SearchUserCell.swift */,
+			);
+			path = "Search User";
+			sourceTree = "<group>";
+		};
 		D8CEC1FD25A3950C00FBE20C = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 		D8CEC20825A3950C00FBE20C /* IntagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				D89D601F25BADBF6007E32A2 /* Search User */,
 				D86B164725B5A6AD003A95C6 /* Main */,
 				D8E59F3E25AC551300815FF1 /* Add Photo */,
 				D8E7B61125A9F681007F86CD /* Model */,
@@ -291,7 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89D602125BADC16007E32A2 /* SearchUserController.swift in Sources */,
 				D876865725AB1E5300E8ADC1 /* LoginViewController.swift in Sources */,
+				D89D602525BADF4A007E32A2 /* SearchUserCell.swift in Sources */,
 				D8CEC20E25A3950C00FBE20C /* RegisterViewController.swift in Sources */,
 				D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */,
 				D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */,
