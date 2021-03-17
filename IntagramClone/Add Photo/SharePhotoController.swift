@@ -12,7 +12,7 @@ import Firebase
 class SharePhotoController : UIViewController {
     
     
-    
+    static let updateNotification = Notification.Name("UpdatePosts")
     
     var choosenPhoto: UIImage? {
         didSet{
@@ -152,6 +152,8 @@ class SharePhotoController : UIViewController {
             
             print("Comment successfully added docID : \(ref?.documentID ?? "")")
             self.dismiss(animated: true, completion: nil)
+                
+                NotificationCenter.default.post(name: SharePhotoController.updateNotification, object: nil)
         })
         
         

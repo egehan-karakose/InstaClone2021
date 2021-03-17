@@ -164,7 +164,9 @@ class MainPagePostCell : UICollectionViewCell{
         
         attrText.append(NSAttributedString(string: "\n\n", attributes: [.font: UIFont.systemFont(ofSize: 5)]))
         
-        attrText.append(NSAttributedString(string: "1 week ago", attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.gray]))
+        let postDate = post.CommentDate.dateValue()
+        
+        attrText.append(NSAttributedString(string: postDate.calcTime(), attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.gray]))
         
         postLabel.attributedText = attrText
 

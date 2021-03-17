@@ -17,7 +17,7 @@ struct Post {
     let Comment : String?
     let PhotoWidth: Double?
    let  PhotoHeight: Double?
-   let CommentDate : Timestamp?
+   let CommentDate : Timestamp
     
     
     init(user: User , data : [String: Any]) {
@@ -27,6 +27,6 @@ struct Post {
         self.Comment = data["Comment"] as? String
         self.PhotoWidth = data["PhotoWidth"] as? Double
         self.PhotoHeight = data["PhotoHeight"] as? Double
-        self.CommentDate = data["CommentDate"] as? Timestamp
+        self.CommentDate = data["CommentDate"] as? Timestamp ?? Timestamp(date: Date())
     }
 }

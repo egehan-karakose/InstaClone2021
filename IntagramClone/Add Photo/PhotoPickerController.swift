@@ -21,12 +21,14 @@ class PhotoPickerController : UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        
         addButtons()
         
         collectionView.register(PhotoPickerCell.self, forCellWithReuseIdentifier: PhotoPickerCell.identifier)
         
         collectionView.register(ImagePickerHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ImagePickerHeader.identifier)
+        
+        collectionView.backgroundColor = .systemBackground
         
         getPhotos()
         
@@ -141,6 +143,7 @@ class PhotoPickerController : UICollectionViewController {
     
     fileprivate func addButtons(){
         navigationController?.navigationBar.tintColor = .label
+        navigationController?.navigationBar.backgroundColor = .secondarySystemBackground
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonPressed))
         
