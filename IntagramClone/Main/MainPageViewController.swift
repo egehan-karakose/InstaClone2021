@@ -14,18 +14,18 @@ class MainPageViewController: UICollectionViewController {
     var currentUser : User?
     
     var posts = [Post]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshPosts), name: SharePhotoController.updateNotification, object: nil)
-       
+        
         collectionView.backgroundColor = .systemBackground
         collectionView.register(MainPagePostCell.self, forCellWithReuseIdentifier: MainPagePostCell.identifier)
-  
+        
         setButtons()
-
+        
         getUser()
         
         getFollowingUserId()
@@ -67,7 +67,7 @@ class MainPageViewController: UICollectionViewController {
     }
     
     fileprivate func getPosts(user : User){
-       
+        
         
         Firestore.firestore().collection("Comments").document(user.userId).collection("Posts").order(by: "CommentDate", descending: false)
             .addSnapshotListener { (snapshot, error) in
@@ -100,21 +100,31 @@ class MainPageViewController: UICollectionViewController {
     
     fileprivate func setButtons(){
         navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "Logo_Instagram2").withTintColor(UIColor.label, renderingMode: .alwaysOriginal))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Kamera").withTintColor(.label, renderingMode: .alwaysOriginal), style: .plain, target: self, action: #selector(manageCamera))
+    }
+    
+    
+    
+    @objc fileprivate func manageCamera(){
+        let cameraContoller = CameraController()
+        cameraContoller.modalPresentationStyle = .fullScreen
+        present(cameraContoller, animated: true, completion: nil)
+        
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainPagePostCell.identifier, for: indexPath) as! MainPagePostCell
-
+        
         cell.post  = posts[indexPath.row]
         return cell
     }
     
-  
+    
     
     fileprivate func getUser(userId: String = ""){
         guard let currentUserId = Auth.auth().currentUser?.uid else {return}
@@ -136,8 +146,8 @@ class MainPageViewController: UICollectionViewController {
         }
     }
     
-
-
+    
+    
 }
 extension MainPageViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
