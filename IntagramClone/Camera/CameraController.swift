@@ -10,7 +10,7 @@ import UIKit
 import JGProgressHUD
 
 
-class CameraController : UIViewController {
+class CameraController : UIViewController, UIViewControllerTransitioningDelegate {
     
     
     
@@ -35,6 +35,14 @@ class CameraController : UIViewController {
         return button
     }()
     
+    
+    
+//    Hide status bar
+    override var prefersStatusBarHidden: Bool {
+        
+        return true
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +50,12 @@ class CameraController : UIViewController {
         
         view.addSubview(takePhotoButton)
         view.addSubview(backButton)
+        setView()
         
+        transitioningDelegate = self
+       
+    }
+    fileprivate func setView(){
         takePhotoButton.anchor(top: nil, bottom: view.bottomAnchor, leading: nil, trailing: nil, paddingTop: 0, paddingBottom: -25, paddingLeft: 0, paddingRight: 0, width: 90, height: 90)
         
         takePhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -50,6 +63,7 @@ class CameraController : UIViewController {
         
         backButton.anchor(top: view.topAnchor, bottom: nil, leading: nil, trailing: view.trailingAnchor, paddingTop: 25, paddingBottom: 0, paddingLeft: 0, paddingRight: -15, width: 50, height: 50)
     }
+    
     
     
     @objc fileprivate func takePhotoPressed(){
@@ -94,21 +108,39 @@ class CameraController : UIViewController {
         
     }
     
+    let presentAnimation = PresentAnimation()
+    let dismissAnimation = DismissAnimation()
+    
+    
+//    Triggered when start animation
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentAnimation
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return dismissAnimation
+    }
+    
     
 }
 
 extension CameraController : AVCapturePhotoCaptureDelegate {
+    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
         
         guard let imageData = photo.fileDataRepresentation() else {return}
         
         let preview = UIImage(data: imageData)
-        let imagePreview = UIImageView(image: preview)
         
-        view.addSubview(imagePreview)
+        let photoPreviewView =  PhotoPreviewView()
         
-        imagePreview.anchor(top: view.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 0, height: 0)
+        photoPreviewView.photoPreview.image = preview
+        
+        view.addSubview(photoPreviewView)
+        photoPreviewView.anchor(top: view.topAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0, width: 0, height: 0)
+        
+       
         
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Photo Capturing..."
@@ -117,3 +149,4 @@ extension CameraController : AVCapturePhotoCaptureDelegate {
         
     }
 }
+
