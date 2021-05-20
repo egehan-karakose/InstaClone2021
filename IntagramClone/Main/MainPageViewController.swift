@@ -82,7 +82,8 @@ class MainPageViewController: UICollectionViewController {
                 snapshot?.documentChanges.forEach({ (docChange) in
                     if docChange.type == .added{
                         let postData = docChange.document.data()
-                        let post = Post(user: user, data: postData)
+                        var post = Post(user: user, data: postData)
+                        post.id = docChange.document.documentID
                         self.posts.append(post)
                     }
                 })
@@ -121,6 +122,7 @@ class MainPageViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainPagePostCell.identifier, for: indexPath) as! MainPagePostCell
         
         cell.post  = posts[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -155,4 +157,19 @@ extension MainPageViewController : UICollectionViewDelegateFlowLayout {
         height += view.frame.width
         return CGSize(width: view.frame.width, height: height)
     }
+}
+
+extension MainPageViewController : MainPagePostCellDelegate {
+    func commentPressed(post : Post) {
+        
+        let commentsController = CommentsController(collectionViewLayout: UICollectionViewFlowLayout())
+        commentsController.choosenPost = post
+        navigationController?.pushViewController(commentsController, animated: true)
+        
+    }
+    
+    
+    
+    
+    
 }

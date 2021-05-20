@@ -9,7 +9,14 @@ import Foundation
 import UIKit
 import SDWebImage
 
+protocol MainPagePostCellDelegate {
+    func commentPressed(post : Post)
+}
+
 class MainPagePostCell : UICollectionViewCell{
+    
+    var delegate : MainPagePostCellDelegate?
+    
     var post : Post? {
         didSet{
             
@@ -98,11 +105,11 @@ class MainPagePostCell : UICollectionViewCell{
         return button
     }()
     
-    let commentButton : UIButton = {
+    lazy var commentButton : UIButton = {
         
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "Yorum").withTintColor(.label).withRenderingMode(.alwaysOriginal), for: .normal)
-        
+        button.addTarget(self, action:#selector(commentButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -151,6 +158,12 @@ class MainPagePostCell : UICollectionViewCell{
         interactionButtons()
         
         
+    }
+    
+    
+    @objc fileprivate func commentButtonPressed(){
+        guard let post = self.post else { return }
+        delegate?.commentPressed(post: post)
     }
     
     

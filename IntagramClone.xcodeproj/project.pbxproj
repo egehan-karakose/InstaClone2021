@@ -12,6 +12,7 @@
 		D862526625B049F000C7F4B1 /* PhotoPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862526525B049F000C7F4B1 /* PhotoPickerCell.swift */; };
 		D862526925B04EC300C7F4B1 /* ImagePickerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862526825B04EC300C7F4B1 /* ImagePickerHeader.swift */; };
 		D862526C25B0562900C7F4B1 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D862526B25B0562900C7F4B1 /* SharePhotoController.swift */; };
+		D8674EF52608DC20005D9DC6 /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8674EF42608DC20005D9DC6 /* CommentsController.swift */; };
 		D86B164225B59B78003A95C6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B164125B59B78003A95C6 /* Post.swift */; };
 		D86B164525B59DC9003A95C6 /* UserPostPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B164425B59DC9003A95C6 /* UserPostPhotoCell.swift */; };
 		D86B164925B5A6C8003A95C6 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B164825B5A6C8003A95C6 /* MainPageViewController.swift */; };
@@ -46,6 +47,7 @@
 		D862526525B049F000C7F4B1 /* PhotoPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerCell.swift; sourceTree = "<group>"; };
 		D862526825B04EC300C7F4B1 /* ImagePickerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerHeader.swift; sourceTree = "<group>"; };
 		D862526B25B0562900C7F4B1 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
+		D8674EF42608DC20005D9DC6 /* CommentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
 		D86B164125B59B78003A95C6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D86B164425B59DC9003A95C6 /* UserPostPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostPhotoCell.swift; sourceTree = "<group>"; };
 		D86B164825B5A6C8003A95C6 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				D86B164825B5A6C8003A95C6 /* MainPageViewController.swift */,
 				D86B164C25B5A884003A95C6 /* MainPagePostCell.swift */,
+				D8674EF42608DC20005D9DC6 /* CommentsController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				D876865725AB1E5300E8ADC1 /* LoginViewController.swift in Sources */,
 				D89D602525BADF4A007E32A2 /* SearchUserCell.swift in Sources */,
 				D8CEC20E25A3950C00FBE20C /* RegisterViewController.swift in Sources */,
+				D8674EF52608DC20005D9DC6 /* CommentsController.swift in Sources */,
 				D8DF0D0125A9F24600BFE236 /* UserProfileHeader.swift in Sources */,
 				D8A92DAA26037FA8001DF777 /* CameraController.swift in Sources */,
 				D8DF0CFD25A9ECA100BFE236 /* UserProfileViewController.swift in Sources */,

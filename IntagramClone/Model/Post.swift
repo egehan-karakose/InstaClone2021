@@ -10,7 +10,7 @@ import Foundation
 
 
 struct Post {
-    
+    var id : String?
     let User: User
     let UserID: String?
     let  CommentPhotoURL: String?
